@@ -1,4 +1,4 @@
-namespace Space.Test;
+namespace spaceapi.tests;
 
 public class UnitTest1
 {
