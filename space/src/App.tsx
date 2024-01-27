@@ -1,27 +1,11 @@
-import { Routes, Route } from "react-router-dom";
-import {
-  Feed,
-  Footer,
-  Header,
-  Home,
-  Manage,
-  NotFound,
-  Search,
-} from "./components/_index";
+import { Outlet } from "react-router-dom";
+import { Footer, Header } from "./pages/_index";
 
 function App() {
   return (
     <>
       <Header />
-      <main>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/feed" element={<Feed />} />
-          <Route path="/search" element={<Search />} />
-          <Route path="/manage" element={<Manage />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </main>
+      <Outlet />
       <Footer />
     </>
   );
