@@ -28,7 +28,6 @@ const useAxios = <T>() : ApiResponse<T> => {
       if (httpMethods[method]) {
         const response = await httpMethods[method](url, requestData);
         setData(response.data);
-        console.log(response.data);
       } else {
         throw new Error(`Invalid HTTP method: ${method}`);
       }

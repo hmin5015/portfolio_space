@@ -62,11 +62,11 @@ const ButtonSection = styled.section`
 `;
 
 export const Manage = () => {
-  const apiGetUrl =
-    "https://srtwj8tzu1.execute-api.us-west-1.amazonaws.com/dev/user?UserId=ed18a094-0589-47bf-be16-6b2754421aed";
-  const apiPutUrl =
-    "https://srtwj8tzu1.execute-api.us-west-1.amazonaws.com/dev/user";
+  const apiDevUri = import.meta.env.VITE_REACT_APP_API_URL;
+  const apiGetUrl = `${apiDevUri}/user?UserId=ed18a094-0589-47bf-be16-6b2754421aed`;
+  const apiPutUrl = `${apiDevUri}/user`;
   const { data, error, loading, fetchData } = useAxios();
+
   const userData: User = data as User;
   const [user, setUser] = useState<User>(
     userData || {
@@ -89,7 +89,6 @@ export const Manage = () => {
   }, [apiGetUrl]);
 
   useEffect(() => {
-    console.log(userData)
     userData && setUser(userData);
   }, [userData]);
 
